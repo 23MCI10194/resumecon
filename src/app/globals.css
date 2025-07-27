@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 17% 96%;
+    --foreground: 220 13% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    --primary: 231 48% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 13% 28%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 13% 41%;
+    --accent: 261 40% 63%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 231 48% 48%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 220 17% 96%;
+    --card: 220 13% 14%;
+    --card-foreground: 220 17% 96%;
+    --popover: 220 13% 10%;
+    --popover-foreground: 220 17% 96%;
+    --primary: 231 48% 68%;
+    --primary-foreground: 231 48% 18%;
+    --secondary: 220 13% 24%;
+    --secondary-foreground: 220 17% 86%;
+    --muted: 220 13% 24%;
+    --muted-foreground: 220 17% 66%;
+    --accent: 261 40% 73%;
+    --accent-foreground: 261 40% 13%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 24%;
+    --input: 220 13% 24%;
+    --ring: 231 48% 68%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .print-hidden {
+      display: none;
+    }
+    .print-visible {
+      visibility: visible !important;
+    }
+    .print-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    body > *:not(.print-container) {
+      visibility: hidden;
+    }
+  }
+}
